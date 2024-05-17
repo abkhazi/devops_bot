@@ -1,0 +1,16 @@
+host01 ansible_host=192.168.126.151 ansible_user=ansible ansible_password=ansible
+host02 ansible_host=192.168.126.150 ansible_user=ansible ansible_password=ansible
+host03 ansible_host=192.168.126.152 ansible_user=ansible ansible_password=ansible
+
+[all:vars]
+postgresql_version=15
+db_master_port=5432 
+db_master_host=192.168.126.151
+db_master_user=postgres
+db_master_password=Qq123456
+db_master_database=tg_bot
+db_repl_host=192.168.126.152
+db_repl_port=5432
+db_repl_user=repl_user
+db_repl_password=resu
+bot_repo=https://github.com/abkhazi/devops_bot.git
