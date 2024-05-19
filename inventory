@@ -1,15 +1,19 @@
-host01 ansible_host=192.168.126.151 ansible_user=ansible ansible_password=ansible
-host02 ansible_host=192.168.126.150 ansible_user=ansible ansible_password=ansible
-host03 ansible_host=192.168.126.152 ansible_user=ansible ansible_password=ansible
+# Мастер-сервер
+host01 ansible_host=192.168.231.132 ansible_user=ansible ansible_password=ansible
+# Слейв-сервер
+host02 ansible_host=192.168.231.133 ansible_user=ansible ansible_password=ansible
+# Хост для запуска скрипта
+host03 ansible_host=192.168.231.134 ansible_user=ansible ansible_password=ansible
 
+# Переменные 
 [all:vars]
 postgresql_version=15
 db_master_port=5432 
-db_master_host=192.168.126.151
+db_master_host=192.168.231.132
 db_master_user=postgres
 db_master_password=Qq123456
 db_master_database=tg_bot
-db_repl_host=192.168.126.152
+db_repl_host=192.168.231.134
 db_repl_port=5432
 db_repl_user=repl_user
 db_repl_password=resu
