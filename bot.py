@@ -63,7 +63,7 @@ def execute_command(ssh, command):
 # Функция для получения логов репликации PostgreSQL
 def get_repl_logs(update: Update, context):
     ssh = establish_ssh_connection()
-    result = execute_command(ssh, 'cat /var/log/postgresql/*.log | grep replication')
+    result = execute_command(ssh, 'cat /var/log/postgresql/*.log | grep -E -i "replication|репл" | head -n 10')
     ssh.close()
     update.message.reply_text(result)
 
